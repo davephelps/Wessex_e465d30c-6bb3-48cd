@@ -1,0 +1,53 @@
+###
+POST 
+
+
+### Call Local Workflow
+
+POST http://localhost:7071/api/CreateOrder/triggers/Order_Request/invoke?api-version=2022-05-01&sp=%2Ftriggers%2FOrder_Request%2Frun&sv=1.0&sig=db73Ru4wqU44Af0TFWkJT9S0Hh6QvkgDpwtqLAH44E0
+Content-Type: application/json
+
+{
+  "orderId": "55_1626",
+  "forenames": "Phil",
+  "surname": "Brewster",
+  "title": "Mr",
+  "contactDetails": {
+      "mobile": "0777777777",
+      "home": "01111222222",
+      "email": "dave@microsoft.com"
+  },
+  "deliveryAddress": {
+      "houseNumber": "2",
+      "streetName": "Lake View",
+      "town": "Cheltenham",
+      "postCode": "GL51AAA",
+      "country": "UK"
+  },
+  "orderDetails": 
+  [
+      {
+          "quantity": "3",
+          "price" : "20.00",
+          "priority": "2",
+              "productDetails": {
+                  "productID": "123",
+                  "category": "Accessories",
+                  "name": "Microsoft Arc Mouse",
+                  "colour": "Green"
+              }
+      },
+      {
+          "quantity": "1",
+          "price" : "1400.00",
+          "priority": "1",
+              "productDetails": {
+                  "productID": "123",
+                  "category": "Laptops",
+                  "name": "Microsoft Surface Pro 4",
+                  "colour": "Titanium"
+              }
+      }
+  ]
+}
+
