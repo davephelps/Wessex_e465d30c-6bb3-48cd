@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "orderId": {
+            "type": "string"
+        },
+        "forenames": {
+            "type": "string"
+        },
+        "surname": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "contactDetails": {
+            "type": "object",
+            "properties": {
+                "mobile": {
+                    "type": "string"
+                },
+                "home": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            }
+        },
+        "deliveryAddress": {
+            "type": "object",
+            "properties": {
+                "houseNumber": {
+                    "type": "string"
+                },
+                "streetName": {
+                    "type": "string"
+                },
+                "town": {
+                    "type": "string"
+                },
+                "postCode": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            }
+        },
+        "orderDetails": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "quantity": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "string"
+                    },
+                    "productDetails": {
+                        "type": "object",
+                        "properties": {
+                            "productID": {
+                                "type": "string"
+                            },
+                            "category": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "colour": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "quantity",
+                    "price",
+                    "priority",
+                    "productDetails"
+                ]
+            }
+        }
+    },
+    "required": [
+        "orderId"
+    ]
+}

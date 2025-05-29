@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+      "orderId": {
+          "type": "string"
+      },
+      "accountId": {
+          "type": "string"
+      },
+      "customerFullName": {
+          "type": "string"
+      },
+      "orderDetails": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "quantity": {
+                      "type": "string"
+                  },
+                  "price": {
+                      "type": "string"
+                  },
+                  "productID": {
+                      "type": "string"
+                  },
+                  "orderTotal": {
+                      "type": "string"
+                  }
+              },
+              "required": [
+                  "quantity",
+                  "price",
+                  "productID",
+                  "orderTotal"
+              ]
+          }
+      },
+      "totalOrderQuantity": {
+          "type": "string"
+      },
+      "totalOrderValue": {
+          "type": "string"
+      }
+  }
+}
