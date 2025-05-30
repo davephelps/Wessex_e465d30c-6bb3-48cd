@@ -1,0 +1,21 @@
+$version: 1
+$input: JSON
+$output: JSON
+$sourceSchema: internalOrderSource.json
+$targetSchema: internalOrderDest.json
+root:
+  orderId: /root/order/orderId
+  accountId: /root/account/accountId
+  customerFullName: >-
+    concat(/root/account/title, " ", /root/order/forenames, " ",
+    /root/order/surname)
+  orderDetails:
+    $for(/root/order/orderDetails/*):
+      quantity: quantity
+      price: price
+      productID: productDetails/productID
+      orderTotal: multiply(price, quantity)
+  totalOrderQuantity: sum(/root/order/orderDetails/*/quantity, /root/order/orderDetails/*)
+  totalOrderValue: >-
+    sum(multiply(/root/order/orderDetails/*/price,
+    /root/order/orderDetails/*/quantity), /root/order/orderDetails/*)
